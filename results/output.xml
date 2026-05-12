@@ -1,0 +1,577 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.4.1 (Python 3.13.0 on win32)" generated="2026-05-12T05:50:57.832231" rpa="false" schemaversion="5">
+<suite id="s1" name="TC Autorisations Dossier" source="C:\Users\raoua\OneDrive\Bureau\Alfersco\Robot Framework\TC_Autorisations_Dossier.robot">
+<kw name="Préconditions" type="SETUP">
+<kw name="Login" owner="K46_Talel_Login">
+<kw name="Set Selenium Timeout" owner="SeleniumLibrary">
+<arg>${TIMEOUT}</arg>
+<doc>Sets the timeout that is used by various keywords.</doc>
+<status status="PASS" start="2026-05-12T05:50:58.377097" elapsed="0.000828"/>
+</kw>
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:50:58.378989" level="INFO">Opening browser 'chrome' to base url 'http://172.16.132.248/share/page'.</msg>
+<arg>${vURL}</arg>
+<arg>${vBrowser}</arg>
+<arg>options=add_argument("--lang=fr")</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2026-05-12T05:50:58.378396" elapsed="4.839489"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2026-05-12T05:51:03.218476" elapsed="0.090349"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:03.310906" level="INFO">Typing text 'admin' into text field 'name=username'.</msg>
+<arg>${txt_UserName}</arg>
+<arg>${vUsername}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:03.309394" elapsed="0.165055"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:03.476143" level="INFO">Typing text 'KwiSW3b23Zvp' into text field 'name=password'.</msg>
+<arg>${txt_Password}</arg>
+<arg>${vPassword}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:03.475078" elapsed="0.145669"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:03.621862" level="INFO">Clicking button 'xpath=//button[contains(text(), 'Connexion')]'.</msg>
+<arg>${btn_Login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:03.621209" elapsed="2.476539"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lblTitle}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:06.098389" elapsed="0.066607"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:06.213760" level="INFO">Element '//div[@id='HEADER_TITLE_BAR']/header/div' contains text 'Tableau de bord de'.</msg>
+<arg>${lblTitle}</arg>
+<arg>Tableau de bord de</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2026-05-12T05:51:06.165627" elapsed="0.048959"/>
+</kw>
+<arg>${URL}/share/page</arg>
+<arg>${BROWSER}</arg>
+<arg>${USERNAME}</arg>
+<arg>${PASSWORD}</arg>
+<status status="PASS" start="2026-05-12T05:50:58.375505" elapsed="7.839497"/>
+</kw>
+<kw name="Naviguer vers Gestion des Groupes" owner="K27_Admin_Groupe">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lnk_Outils_Admin_K27}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:06.216547" elapsed="0.032145"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:06.249955" level="INFO">Clicking element 'xpath=//a[@title='Admin Tools'] | //a[contains(normalize-space(.),'Outils admin')]'.</msg>
+<arg>${lnk_Outils_Admin_K27}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:06.249233" elapsed="5.342473"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lnk_Groupes_K27}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:11.592289" elapsed="0.036855"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:11.630308" level="INFO">Clicking element 'xpath=//a[contains(normalize-space(.),'Groups') or contains(normalize-space(.),'Groupes')]'.</msg>
+<arg>${lnk_Groupes_K27}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:11.629666" elapsed="0.582657"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>Groups</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-05-12T05:51:12.212714" elapsed="0.048303"/>
+</kw>
+<status status="PASS" start="2026-05-12T05:51:06.215645" elapsed="6.045903"/>
+</kw>
+<kw name="Créer un groupe" owner="K27_Admin_Groupe">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_Parcourir_K27}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:12.263501" elapsed="0.063743"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:12.328794" level="INFO">Clicking element 'xpath=//button[contains(normalize-space(.),'Parcourir')] | //button[contains(normalize-space(.),'Browse')]'.</msg>
+<arg>${btn_Parcourir_K27}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:12.327883" elapsed="0.131969"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-12T05:51:14.461827" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-12T05:51:12.460314" elapsed="2.002395"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_Nouveau_Groupe_K27}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:14.463267" elapsed="0.031917"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:14.496488" level="INFO">Clicking element 'xpath=//span[@title='Nouveau groupe' or @title='New Group']'.</msg>
+<arg>${btn_Nouveau_Groupe_K27}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:14.495739" elapsed="0.113896"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input_ShortName_Groupe}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:14.610165" elapsed="0.050954"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:14.662270" level="INFO">Typing text 'test_groupe' into text field 'xpath=//*[@id='page_x002e_ctool_x002e_admin-console_x0023_default-create-shortname']'.</msg>
+<arg>${input_ShortName_Groupe}</arg>
+<arg>${vNomCourt}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:14.661523" elapsed="0.125102"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:14.787866" level="INFO">Typing text 'Groupe de Test' into text field 'xpath=//*[@id='page_x002e_ctool_x002e_admin-console_x0023_default-create-displayname']'.</msg>
+<arg>${input_NomAffichage_Groupe}</arg>
+<arg>${vNomAffichage}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:14.787098" elapsed="0.237885"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:15.026730" level="INFO">Clicking element 'xpath=//button[contains(normalize-space(.),'Créer un groupe')] | //button[contains(normalize-space(.),'Create Group')]'.</msg>
+<arg>${btn_Creer_Groupe}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:15.025826" elapsed="0.158974"/>
+</kw>
+<kw name="Wait Until Page Contains" owner="SeleniumLibrary">
+<arg>${vNomCourt}</arg>
+<arg>10s</arg>
+<doc>Waits until ``text`` appears on the current page.</doc>
+<status status="PASS" start="2026-05-12T05:51:15.185791" elapsed="0.455799"/>
+</kw>
+<arg>${GROUPE_NOM}</arg>
+<arg>${GROUPE_AFFICHAGE}</arg>
+<status status="PASS" start="2026-05-12T05:51:12.262335" elapsed="3.379657"/>
+</kw>
+<kw name="Naviguer vers Mes Fichiers" owner="K24_Favoris_Dossier">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lnk_Mes_Fichiers}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:15.643340" elapsed="0.029622"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:15.674243" level="INFO">Clicking element 'xpath=//a[@title='Mes fichiers']'.</msg>
+<arg>${lnk_Mes_Fichiers}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:15.673441" elapsed="1.511542"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_Creer_K24}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:17.185398" elapsed="0.502622"/>
+</kw>
+<status status="PASS" start="2026-05-12T05:51:15.642416" elapsed="2.046214"/>
+</kw>
+<kw name="Créer un dossier dans Mes Fichiers" owner="K24_Favoris_Dossier">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:17.691135" level="INFO">Clicking element 'xpath=//button[contains(@id,'createContent-button-button')]'.</msg>
+<arg>${btn_Creer_K24}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:17.690355" elapsed="0.168662"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${mnu_Dossier_K24}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:17.859679" elapsed="0.046216"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:17.907560" level="INFO">Clicking element 'xpath=//span[contains(@class,'folder-file') and text()='Dossier']'.</msg>
+<arg>${mnu_Dossier_K24}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:17.906545" elapsed="0.163994"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input_Nom_Dossier}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:18.071196" elapsed="0.255794"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:18.328653" level="INFO">Typing text 'DossierAutorisations' into text field 'xpath=//input[contains(@id,'createFolder_prop_cm_name')]'.</msg>
+<arg>${input_Nom_Dossier}</arg>
+<arg>${vNomDossier}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:18.327668" elapsed="0.203002"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:18.532684" level="INFO">Clicking element 'xpath=//button[contains(@id,'createFolder-form-submit-button')]'.</msg>
+<arg>${btn_Enregistrer_Dossier}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:18.531721" elapsed="0.223267"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h3[@class='filename']//a[text()='${vNomDossier}']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:18.755873" elapsed="0.941401"/>
+</kw>
+<arg>${DOSSIER_AUTORI}</arg>
+<status status="PASS" start="2026-05-12T05:51:17.689338" elapsed="2.008429"/>
+</kw>
+<status status="PASS" start="2026-05-12T05:50:58.374378" elapsed="21.323949"/>
+</kw>
+<test id="s1-t1" name="RQ2.BF10.1 - Gérer les autorisations d'un dossier" line="22">
+<kw name="Naviguer vers Mes Fichiers" owner="K24_Favoris_Dossier">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lnk_Mes_Fichiers}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:19.708345" elapsed="0.036378"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:19.746420" level="INFO">Clicking element 'xpath=//a[@title='Mes fichiers']'.</msg>
+<arg>${lnk_Mes_Fichiers}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:19.745438" elapsed="0.459148"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_Creer_K24}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:20.205234" elapsed="1.067970"/>
+</kw>
+<status status="PASS" start="2026-05-12T05:51:19.707131" elapsed="1.566576"/>
+</kw>
+<kw name="Afficher les détails du dossier" owner="K26_AutorisationDossier">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h3[@class='filename']//a[text()='${vNomDossier}']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:21.276002" elapsed="0.049461"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:21.326811" level="INFO">Simulating Mouse Over on element 'xpath=//h3[@class='filename']//a[text()='DossierAutorisations']'.</msg>
+<arg>xpath=//h3[@class='filename']//a[text()='${vNomDossier}']</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:21.326019" elapsed="0.296154"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${det_Dossier_1}${vNomDossier}${det_Dossier_2}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:21.622789" elapsed="0.042336"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:21.666700" level="INFO">Clicking element 'xpath=//h3[@class='filename']//a[text()='DossierAutorisations']/ancestor::tr//a[@title='Afficher les détails']'.</msg>
+<arg>${det_Dossier_1}${vNomDossier}${det_Dossier_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:21.665712" elapsed="1.485703"/>
+</kw>
+<arg>${DOSSIER_AUTORI}</arg>
+<status status="PASS" start="2026-05-12T05:51:21.274671" elapsed="1.877264"/>
+</kw>
+<kw name="Gérer les autorisations du dossier" owner="K26_AutorisationDossier">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lnk_Gerer_Autorisations}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:23.153853" elapsed="0.041147"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:23.196433" level="INFO">Clicking element 'xpath=//a[@title='Gérer les autorisations']'.</msg>
+<arg>${lnk_Gerer_Autorisations}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:23.195613" elapsed="0.568322"/>
+</kw>
+<status status="PASS" start="2026-05-12T05:51:23.152758" elapsed="0.611665"/>
+</kw>
+<kw name="Ajouter un groupe aux autorisations" owner="K26_AutorisationDossier">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_Ajouter_Utilisateur}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:23.766466" elapsed="0.047874"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:23.816065" level="INFO">Clicking element 'xpath=//button[@id='template_x002e_manage-permissions_x002e_manage-permissions_x0023_default-addUserGroupButton-button']'.</msg>
+<arg>${btn_Ajouter_Utilisateur}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:23.815006" elapsed="0.127502"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input_Recherche_Autori}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:23.943038" elapsed="0.036057"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:23.980702" level="INFO">Typing text 'test_groupe' into text field 'xpath=//input[@id='template_x002e_manage-permissions_x002e_manage-permissions_x0023_default-authorityFinder-search-text']'.</msg>
+<arg>${input_Recherche_Autori}</arg>
+<arg>${vNomGroupe}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:23.979631" elapsed="0.162547"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:24.143745" level="INFO">Clicking element 'xpath=//button[@id='template_x002e_manage-permissions_x002e_manage-permissions_x0023_default-authorityFinder-authority-search-button-button']'.</msg>
+<arg>${btn_Rechercher_Autori}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:24.142806" elapsed="0.126062"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_Ajouter_Resultat}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:24.269356" elapsed="0.244510"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:24.514924" level="INFO">Clicking element 'xpath=//td[contains(@class,'yui-dt-col-actions')]//button[normalize-space()='Ajouter']'.</msg>
+<arg>${btn_Ajouter_Resultat}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:24.514268" elapsed="0.128593"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-12T05:51:25.644300" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-12T05:51:24.643239" elapsed="1.002054"/>
+</kw>
+<arg>${GROUPE_NOM}</arg>
+<status status="PASS" start="2026-05-12T05:51:23.765360" elapsed="1.880389"/>
+</kw>
+<kw name="Enregistrer les autorisations" owner="K26_AutorisationDossier">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_Enregistrer_Autori}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:25.647406" elapsed="0.031487"/>
+</kw>
+<kw name="Wait Until Element Is Enabled" owner="SeleniumLibrary">
+<arg>${btn_Enregistrer_Autori}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is enabled.</doc>
+<status status="PASS" start="2026-05-12T05:51:25.679307" elapsed="0.036527"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:25.717224" level="INFO">Clicking element 'xpath=//button[@id='template_x002e_manage-permissions_x002e_manage-permissions_x0023_default-okButton-button']'.</msg>
+<arg>${btn_Enregistrer_Autori}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:25.716389" elapsed="0.110127"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lnk_Gerer_Autorisations}</arg>
+<arg>15s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:25.827058" elapsed="0.443413"/>
+</kw>
+<status status="PASS" start="2026-05-12T05:51:25.646545" elapsed="0.624296"/>
+</kw>
+<status status="PASS" start="2026-05-12T05:51:19.698722" elapsed="6.572737"/>
+</test>
+<kw name="Postconditions" type="TEARDOWN">
+<kw name="Naviguer vers Mes Fichiers" owner="K24_Favoris_Dossier">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lnk_Mes_Fichiers}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:26.282760" elapsed="0.030484"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:26.314727" level="INFO">Clicking element 'xpath=//a[@title='Mes fichiers']'.</msg>
+<arg>${lnk_Mes_Fichiers}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:26.313783" elapsed="0.724278"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_Creer_K24}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:27.038622" elapsed="0.262178"/>
+</kw>
+<status status="PASS" start="2026-05-12T05:51:26.282048" elapsed="1.019135"/>
+</kw>
+<kw name="Supprimer un dossier dans Mes Fichiers" owner="K24_Favoris_Dossier">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h3[@class='filename']//a[text()='${vNomDossier}']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:27.302873" elapsed="0.028457"/>
+</kw>
+<kw name="Mouse Over" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:27.332638" level="INFO">Simulating Mouse Over on element 'xpath=//h3[@class='filename']//a[text()='DossierAutorisations']'.</msg>
+<arg>xpath=//h3[@class='filename']//a[text()='${vNomDossier}']</arg>
+<doc>Simulates hovering the mouse over the element ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:27.331842" elapsed="0.293749"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${del_ShowMore_D1}${vNomDossier}${del_ShowMore_D2}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:27.626034" elapsed="0.030294"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:27.657559" level="INFO">Clicking element 'xpath=//h3[@class='filename']//a[text()='DossierAutorisations']/ancestor::tr//a[@class='show-more']'.</msg>
+<arg>${del_ShowMore_D1}${vNomDossier}${del_ShowMore_D2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:27.656777" elapsed="0.104029"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-12T05:51:28.263144" level="INFO">Slept 500 milliseconds.</msg>
+<arg>0.5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-12T05:51:27.761435" elapsed="0.502735"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${del_Dossier_1}${vNomDossier}${del_Dossier_2}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:28.264676" elapsed="0.033021"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:28.298856" level="INFO">Clicking element 'xpath=//h3[@class='filename']//a[text()='DossierAutorisations']/ancestor::tr//a[@title='Supprimer le Dossier']'.</msg>
+<arg>${del_Dossier_1}${vNomDossier}${del_Dossier_2}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:28.298084" elapsed="0.115829"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_Confirm_Suppr_D}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:28.414486" elapsed="0.032902"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:28.448652" level="INFO">Clicking element 'xpath=//div[contains(@class,'yui-dialog')]//button[text()='Supprimer']'.</msg>
+<arg>${btn_Confirm_Suppr_D}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:28.447855" elapsed="0.118640"/>
+</kw>
+<kw name="Wait Until Element Is Not Visible" owner="SeleniumLibrary">
+<arg>xpath=//h3[@class='filename']//a[text()='${vNomDossier}']</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is not visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:28.567078" elapsed="0.468558"/>
+</kw>
+<arg>${DOSSIER_AUTORI}</arg>
+<status status="PASS" start="2026-05-12T05:51:27.301864" elapsed="1.734069"/>
+</kw>
+<kw name="Supprimer un groupe" owner="K28_Admin_SuppressionGroupe">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lnk_Outils_Admin_K28}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:29.037833" elapsed="0.027688"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:29.067002" level="INFO">Clicking element 'xpath=//a[@title='Admin Tools'] | //a[contains(normalize-space(.),'Outils admin')]'.</msg>
+<arg>${lnk_Outils_Admin_K28}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:29.066026" elapsed="4.833819"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${lnk_Gestion_Groupes_K28}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:33.900497" elapsed="0.036444"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:33.938204" level="INFO">Clicking element 'xpath=//a[@title='Gestion des groupes']'.</msg>
+<arg>${lnk_Gestion_Groupes_K28}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:33.937448" elapsed="0.677697"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${input_Recherche_Groupe_K28}</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:34.615756" elapsed="0.049118"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:34.666498" level="INFO">Typing text 'test_groupe' into text field 'xpath=//div[@class='yui-u first']/div/input'.</msg>
+<arg>${input_Recherche_Groupe_K28}</arg>
+<arg>${vNomCourt}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:34.665399" elapsed="0.158735"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:34.825620" level="INFO">Clicking button 'xpath=//div[@class='search-button']//button[text()='Rechercher']'.</msg>
+<arg>${btn_Rechercher_Groupe_K28}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:34.824750" elapsed="0.167292"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${btn_Supprimer_Groupe_K28}</arg>
+<arg>5s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2026-05-12T05:51:34.992606" elapsed="0.247220"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:35.240912" level="INFO">Clicking element 'xpath=//a[@class='delete']'.</msg>
+<arg>${btn_Supprimer_Groupe_K28}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:35.240262" elapsed="0.104527"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:35.346142" level="INFO">Clicking button 'xpath=//button[@id='page_x002e_ctool_x002e_admin-console_x0023_default-remove-button-button']'.</msg>
+<arg>${btn_Confirmer_Suppr_Groupe}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:35.345283" elapsed="0.155995"/>
+</kw>
+<arg>${GROUPE_NOM}</arg>
+<status status="PASS" start="2026-05-12T05:51:29.036852" elapsed="6.465010"/>
+</kw>
+<kw name="Logout" owner="K47_Talel_Logout">
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-12T05:51:36.504845" level="INFO">Slept 1 second.</msg>
+<arg>1s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-12T05:51:35.503186" elapsed="1.002771"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:36.507421" level="INFO">Clicking element 'id=HEADER_USER_MENU_POPUP_text'.</msg>
+<arg>${link_HeaderUserMenu}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:36.506509" elapsed="0.121694"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2026-05-12T05:51:38.630243" level="INFO">Slept 2 seconds.</msg>
+<arg>2s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2026-05-12T05:51:36.628785" elapsed="2.002276"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2026-05-12T05:51:38.632367" level="INFO">Clicking element 'id=HEADER_USER_MENU_LOGOUT_text'.</msg>
+<arg>${link_HeaderDeconnexion}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2026-05-12T05:51:38.631494" elapsed="0.122927"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2026-05-12T05:51:38.755150" elapsed="2.962461"/>
+</kw>
+<status status="PASS" start="2026-05-12T05:51:35.502446" elapsed="6.215660"/>
+</kw>
+<status status="PASS" start="2026-05-12T05:51:26.281118" elapsed="15.437311"/>
+</kw>
+<status status="PASS" start="2026-05-12T05:50:57.845469" elapsed="43.873075"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="TC Autorisations Dossier" id="s1" pass="1" fail="0" skip="0">TC Autorisations Dossier</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
