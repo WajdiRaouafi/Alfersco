@@ -1,0 +1,28 @@
+{
+    "modele": {
+        "espace_nom":  "http://www.test.com/model/wajdi/1.0",
+        "prefixe":     "wt",
+        "nom_modele":  "Modele_Test",
+        "createur":    "Wajdi"
+    },
+    "aspect": {
+        "nom_aspect":       "Aspect_Test",
+        "aspect_parent":    "Aucun",
+        "etiquette_aspect": "Aspect Test"
+    },
+    "proprietes": [
+        { "nom_prop": "prop_test_1", "etiquette_prop": "Propriete Test 1" },
+        { "nom_prop": "prop_test_2", "etiquette_prop": "Propriete Test 2" },
+        { "nom_prop": "prop_test_3", "etiquette_prop": "Propriete Test 3" },
+        { "nom_prop": "prop_test_4", "etiquette_prop": "Propriete Test 4" },
+        { "nom_prop": "prop_test_5", "etiquette_prop": "Propriete Test 5" }
+    ],
+    "favoris": {
+        "dossier": "Dossier_Test_Favori",
+        "fichiers": [
+            { "nom_fichier": "Fichier_Favori_1" },
+            { "nom_fichier": "Fichier_Favori_2" },
+            { "nom_fichier": "Fichier_Favori_3" }
+        ]
+    }
+}

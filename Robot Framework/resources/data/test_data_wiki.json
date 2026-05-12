@@ -1,0 +1,12 @@
+{
+    "site": {
+        "nom_site":         "Site Test Wiki",
+        "nom_url_site":     "site-test-wiki",
+        "description_site": "Site pour test de version wiki",
+        "visibilite":       "PUBLIC"
+    },
+    "wikis": [
+        { "nom_wiki": "Test_Wiki_1", "version_attendue": "1.0" },
+        { "nom_wiki": "Test_Wiki_2", "version_attendue": "1.0" }
+    ]
+}
